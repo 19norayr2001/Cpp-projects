@@ -1,0 +1,7 @@
+md Dir1
+md Dir2
+mf Dir1/file.txt
+mhl Dir1/file.txt Dir2
+del Dir1/file.txt
+del Dir2/hlink[C:/Dir1/file.txt]
+del Dir1/file.txt

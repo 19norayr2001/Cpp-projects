@@ -1,0 +1,7 @@
+MD Dir1
+MD Dir2
+MF Dir1/file.txt
+MDL Dir1/file.txt Dir2
+MDL Dir1/file.txt Dir2
+MDL Dir1/file.txt Dir2
+DEL Dir1/file.txt

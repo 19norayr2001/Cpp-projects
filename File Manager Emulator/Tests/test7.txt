@@ -1,0 +1,10 @@
+md Dir1
+md Dir2
+mf Dir1/file.txt
+mhl Dir1/file.txt Dir2
+mdl Dir1/file.txt Dir2
+md Dir2/Dir3
+mhl Dir1/file.txt Dir2/Dir3
+mdl Dir1/file.txt Dir2/Dir3
+md Dir4
+copy Dir2 Dir4

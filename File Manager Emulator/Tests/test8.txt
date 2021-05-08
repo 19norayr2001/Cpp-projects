@@ -1,0 +1,6 @@
+md dir1
+md dir2
+md dir3
+mf dir1/file.txt
+mdl dir1/file.txt dir2
+move dir1/file.txt dir3
