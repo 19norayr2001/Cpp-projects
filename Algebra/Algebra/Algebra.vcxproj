@@ -142,14 +142,19 @@
     <ClCompile Include="EilerFunction.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Permutation.cpp" />
+    <ClCompile Include="Rational.cpp" />
     <ClCompile Include="SimsMatrix.cpp" />
     <ClCompile Include="UnitTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbelianGroupCalculator.h" />
+    <ClInclude Include="DividedByZeroException.h" />
     <ClInclude Include="EilerFunction.h" />
     <ClInclude Include="Permutation.h" />
+    <ClInclude Include="Polynomial.h" />
+    <ClInclude Include="Rational.h" />
     <ClInclude Include="SimsMatrix.h" />
+    <ClInclude Include="SmithNormalizer.h" />
     <ClInclude Include="UnitTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

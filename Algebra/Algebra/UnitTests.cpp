@@ -3,6 +3,9 @@
 #include <iostream>
 #include "SimsMatrix.h"
 #include "EilerFunction.h"
+#include "SmithNormalizer.h"
+#include "Polynomial.h"
+#include "Rational.h"
 
 void Testing::testSimsAlgorithm() {
 	std::cout << "Testing sims algorithm" << std::endl;
@@ -68,4 +71,25 @@ void Testing::testEilerFunction() {
 		std::cout << "result " << EilerFunction::getInstance().calculate(number) << std::endl;
 	}
 	std::cin.clear();
+}
+
+void Testing::testSmithNormalizer() {
+	size_t matrix_size = 0;
+	std::cout << "Testing Smith normalizer" << std::endl;
+	std::cout << "Input matrix size ";
+	std::cin >> matrix_size;
+	std::cout << std::endl << "Input matrix elements" << std::endl;;
+	std::vector<std::vector<Polynomial<Rational>>> matrix(matrix_size, std::vector<Polynomial<Rational>>(matrix_size));
+	for (size_t i = 0; i < matrix_size; ++i) {
+		int elem;
+		Rational minus_one(-1);
+		Rational r;
+		for (size_t j = 0; j < matrix_size; ++j) {
+			std::cin >> elem;
+			r = elem;
+			matrix[i][j] = (i == j ? Polynomial<Rational>({ {0, r}, {1, minus_one} }) : r);
+		}
+	}
+	SmithNormalizer<Rational> s(matrix);
+	std::cout << s << std::endl;
 }

@@ -5,4 +5,5 @@ namespace Testing {
 	void testAbelianGroupCount();
 	void testAbelianGroupIsomorphism();
 	void testEilerFunction();
+	void testSmithNormalizer();
 }

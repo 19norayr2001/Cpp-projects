@@ -33,6 +33,9 @@
     <ClCompile Include="EilerFunction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rational.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbelianGroupCalculator.h">
@@ -48,6 +51,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EilerFunction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SmithNormalizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DividedByZeroException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Polynomial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rational.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
