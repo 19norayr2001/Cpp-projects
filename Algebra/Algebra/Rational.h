@@ -3,28 +3,29 @@
 
 class Rational {
 	friend std::ostream& operator<<(std::ostream&, const Rational&);
+	friend std::istream& operator>>(std::istream&, Rational&);
 public:
-	Rational(int = 0, int = 1);
+	Rational(long long = 0, long long = 1);
 public:
 	Rational& operator*=(const Rational&);
-	Rational& operator*=(int);
+	Rational& operator*=(long long);
 	Rational& operator/=(const Rational&);
 	Rational& operator+=(const Rational&);
 	Rational& operator-=(const Rational&);
 	bool operator==(const Rational&) const;
 private:
-	static int gcd(int, int);
+	static long long gcd(long long, long long);
 	//correct numerator and denominator, as they can not have common divisor;
 	void correct();
 private:
-	int numerator;
-	int denominator;
+	long long numerator;
+	long long denominator;
 };
 
 
 Rational operator*(Rational, const Rational&);
-Rational operator*(int, Rational);
-Rational operator*(Rational, int);
+Rational operator*(long long, Rational);
+Rational operator*(Rational, long long);
 Rational operator/(Rational, const Rational&);
 Rational operator+(Rational, const Rational&);
 Rational operator-(Rational, const Rational&);

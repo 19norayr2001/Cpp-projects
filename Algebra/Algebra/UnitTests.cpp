@@ -81,12 +81,10 @@ void Testing::testSmithNormalizer() {
 	std::cout << std::endl << "Input matrix elements" << std::endl;;
 	std::vector<std::vector<Polynomial<Rational>>> matrix(matrix_size, std::vector<Polynomial<Rational>>(matrix_size));
 	for (size_t i = 0; i < matrix_size; ++i) {
-		int elem;
 		Rational minus_one(-1);
 		Rational r;
 		for (size_t j = 0; j < matrix_size; ++j) {
-			std::cin >> elem;
-			r = elem;
+			std::cin >> r;
 			matrix[i][j] = (i == j ? Polynomial<Rational>({ {0, r}, {1, minus_one} }) : r);
 		}
 	}

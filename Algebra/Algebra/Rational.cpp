@@ -1,15 +1,16 @@
 #include "Rational.h"
 #include <stdexcept>
+#include <sstream>
 
 Rational operator*(Rational obj, const Rational& obj2) {
 	return obj *= obj2;
 }
 
-Rational operator*(Rational obj, int n) {
+Rational operator*(Rational obj, long long n) {
 	return obj *= n;
 }
 
-Rational operator*(int n, Rational obj) {
+Rational operator*(long long n, Rational obj) {
 	return obj *= n;
 }
 
@@ -43,7 +44,26 @@ std::ostream& operator<<(std::ostream& out, const Rational& r) {
 	return out;
 }
 
-Rational::Rational(int n, int m)
+
+std::istream& operator>>(std::istream& in, Rational& r) {
+	std::string s;
+	std::stringstream ss;
+	std::cin >> s;
+	size_t index = s.find('/');
+	// parse numerator
+	ss << s.substr(0, index);
+	ss >> r.numerator;
+	// parse denominator
+	if (index < s.size()) {
+		ss.clear();
+		ss << s.substr(index + 1, s.size() - index - 1);
+		ss >> r.denominator;
+	}
+	r.correct();
+	return in;
+}
+
+Rational::Rational(long long n, long long m)
 	:numerator(n)
 	, denominator(m) {
 
@@ -60,7 +80,7 @@ Rational& Rational::Rational::operator*=(const Rational& obj) {
 	return *this;
 }
 
-Rational& Rational::operator*=(int n) {
+Rational& Rational::operator*=(long long n) {
 	return *this *= Rational(n, 1);
 }
 
@@ -100,7 +120,7 @@ bool Rational::operator==(const Rational& r) const {
 }
 
 // get gcd of two numbers with Euclidean algorithm
-int Rational::gcd(int a, int b) {
+long long Rational::gcd(long long a, long long b) {
 	if (b == 0) {
 		return a;
 	}
@@ -109,7 +129,7 @@ int Rational::gcd(int a, int b) {
 
 void Rational::correct() {
 	// get their gcd and divide on it numerator and denominator
-	int _gcd = gcd(numerator, denominator);
+	long long _gcd = gcd(numerator, denominator);
 	numerator /= _gcd;
 	denominator /= _gcd;
 
