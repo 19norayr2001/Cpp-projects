@@ -1,6 +1,7 @@
 #pragma once
 #include "Permutation.h"
 #include <ostream>
+#include <memory>
 #include <vector>
 #include <tuple>
 

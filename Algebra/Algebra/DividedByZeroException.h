@@ -2,7 +2,12 @@
 #include <exception>
 class DividedByZeroException : public std::exception {
 public:
-	DividedByZeroException()
-		:std::exception("Not allowed divide by zero") {}
+	DividedByZeroException() {}
+
+	const char* what() const noexcept override {
+		return message;
+	}
+private:
+	const char* message = "Not allowed divide by zero";
 };
 

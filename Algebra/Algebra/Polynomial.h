@@ -18,8 +18,8 @@ struct Node
 template<typename T>
 class Polynomial
 {
-	template<typename T>
-	friend std::ostream& operator<<(std::ostream&, const Polynomial<T>&);
+	template<typename U>
+	friend std::ostream& operator<<(std::ostream&, const Polynomial<U>&);
 public:
 	Polynomial(T = T(0));
 	Polynomial(const std::vector<std::pair<int, T>>&);
